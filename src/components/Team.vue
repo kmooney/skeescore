@@ -1,7 +1,6 @@
 <template>
     <div class="team">
-        <h2>{{ props.name }}</h2>
-        <table width="100%">
+        <table width="90%">
             <tr class="frame-count lite">
                 <td></td>
                 <td width="30px">1</td>
@@ -78,10 +77,21 @@ button {
     display: flex;
     font-size: 0.8em;
 }
+h2 {
+    padding:0;
+    margin:0;
+}
 div.team {
-    padding-top:20px;
+    margin-top:20px;
+    padding:12px;
+
+    border-radius: 5px;
+    background: rgba(0,0,0,0.1);
 }
 .lite {
     opacity: 0.5;
+}
+table {
+    font-size: 0.8em;
 }
 </style>
