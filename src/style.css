@@ -37,15 +37,15 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid #261529;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 600;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  background-color: rgb(100, 149, 255);
-  color: black;
+  background-color: rgb(84, 40, 109);
+  color: rgb(255, 255, 255);
   margin:0;
   border-radius: 4px;
 }
@@ -80,7 +80,9 @@ input {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #d6dfff;
-    background-color: #242444;
+    background-color: #2c3359;
+    color: #ffffff;
+    background-image: linear-gradient(135deg, #6d3776 0%, #455387 100%);
+    
   }
 }
