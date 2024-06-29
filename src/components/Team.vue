@@ -24,7 +24,7 @@
             </Row>
             <tr>
                 <td class="lite" align="left"><em>total</em></td>
-                <td v-for="frame in 10"><em>{{ gameState.frameTotal(props.num, frame) }}</em></td>
+                <td v-for="frame in 10" :key="frame"><em>{{ gameState.frameTotal(props.num, frame) }}</em></td>
                 <td><em>{{ gameState.score(props.num) }}</em></td>
             </tr>
         </table>
