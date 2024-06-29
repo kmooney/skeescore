@@ -15,13 +15,11 @@
     const gameState = inject('gameState');
 
     let newGame = () => {
-        gameState.active.value = false
-        gameState.teams.value = [[], []]
-        gameState.currentTurn.value = 0
-        gameState.currentTeam.value = 0
+        gameState.reset()
     }
 
     let startGame = () => {
+        gameState.frameCount.value = 1
         gameState.active.value = true
     }
 </script>
@@ -31,7 +29,7 @@
         background-color: #fefefe;
         color: #333;
         display: block;
-        position:absolute;
+        position: fixed;
         padding:10px;
         margin:0;
         top:0;

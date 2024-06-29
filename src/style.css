@@ -40,16 +40,19 @@ button {
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 600;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
- 
-  background-color: rgb(120, 255, 100);
+  background-color: rgb(100, 149, 255);
   color: black;
   margin:0;
   border-radius: 4px;
+}
+
+div.row {
+  align-items:center;
+  display:flex;
 }
 
 button:disabled {
@@ -67,29 +70,17 @@ button:disabled {
   padding: 2rem;
   text-align: center;
 }
-
-@media (max-width: 480px) {
-  :root {
-    overflow: hidden;
-    touch-action: none;
-    user-scalable: none;
-  }
+input {
+  padding:4px;
+  margin:0;
+  font-size: 1.2em;
+  width: 90px;
+  margin-right:10px;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #8aa4ff;
-    background-color: black;
+    color: #d6dfff;
+    background-color: #242444;
   }
-}
-
-
-body { 
-  -webkit-touch-callout: none !important; 
-  touch-callout: none !important;
-}
-
-body, a { 
-  -webkit-user-select: none !important;
-  user-select: none !important;
 }

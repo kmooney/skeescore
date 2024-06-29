@@ -1,13 +1,10 @@
 <template>
-    <div class="row">
-        <table>
-            <tr>
-                <td>{{ props.name }}</td>
-                <td v-for="score in props.scores">{{ score }}</td>
-                <td><em>total</em></td>
-            </tr>
-        </table>
-    </div>
+    <tr>
+        <td align="left">{{ props.name }}</td>
+        <td v-for="score in props.scores">{{ score }}</td>
+        <td v-for="index in 10 - props.scores.length"> - </td>
+        <td><em v-if="props.scores.length > 0">{{  props.scores.reduce( (x,m) => parseInt(x) + parseInt(m) ) }}</em></td>
+    </tr>
 </template>
 
 <script setup>

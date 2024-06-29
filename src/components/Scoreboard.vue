@@ -1,10 +1,18 @@
 <template>
-    <div v-if="gameState.active.value">
-        <h1>{{ currentPlayer() }} is up!</h1>
-        <h2>{{ nextPlayer() }} is next</h2>
-        <h1>{{ currentPlayer() }} scored <input type="text" v-model="currentScore"> <button @click="saveScore">Next Player</button></h1>
+    <div v-if="gameState.gameOver.value == true">
+        <h1>Game over!</h1>
     </div>
+    <div v-if="gameState.active.value == true">
+        <div>Frame {{ gameState.frameCount.value }} {{ currentPlayer() }} is up ({{ nextPlayer() }} is next)</div>
+        <br>
+        <div class="row">{{ currentPlayer() }} scored 
+            <input type="text" v-model="currentScore" @keyup.enter="saveScore">
+            <button @click="saveScore">Score!</button>
+        </div>
+    </div>
+    <br>
     <Team name="Team 1" :num=0></Team>
+    <br>
     <Team name="Team 2" :num=1></Team>  
 </template>
 
@@ -31,5 +39,13 @@
 </script>
 
 <style scoped>
-
+button {
+    display: inline;
+    padding: 8px;
+}
+input {
+    width: 40px;
+    padding: 5px;
+    margin-left: 10px;
+}
 </style>
