@@ -10,7 +10,8 @@ export const gameState = {
     ready: () => { 
         return gameState.teams.value[0].length > 0 &&
                gameState.teams.value[0].length == gameState.teams.value[1].length &&
-               gameState.active.value == false
+               gameState.active.value == false &&
+               gameState.gameOver.value == false
     },
     nextTeam: () => {
         return (gameState.currentTeam.value + 1) % 2

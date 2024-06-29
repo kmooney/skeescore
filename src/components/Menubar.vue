@@ -16,11 +16,13 @@
 
     let newGame = () => {
         gameState.reset()
+        window.scrollTo(0,0)
     }
 
     let startGame = () => {
         gameState.frameCount.value = 1
         gameState.active.value = true
+        window.scrollTo(0,0)
     }
 </script>
 
@@ -29,8 +31,9 @@
         background-color: #fefefe;
         color: #333;
         display: block;
-        position: fixed;
+        position:fixed;
         padding:10px;
+        justify-content: center;
         margin:0;
         top:0;
         left:0;

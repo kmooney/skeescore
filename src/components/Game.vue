@@ -11,4 +11,10 @@
 </template>
 
 <style scoped>
+    .game {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 </style>

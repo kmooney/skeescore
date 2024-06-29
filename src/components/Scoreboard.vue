@@ -1,22 +1,28 @@
 <template>
-    <div v-if="gameState.active.value == false">
-        <h1>Skee-ball score keeper</h1>
-    </div>
-    <div v-if="gameState.gameOver.value == true">
-        <h1>Game over!</h1>
-    </div>
-    <div v-if="gameState.active.value == true">
-        <div>Frame {{ gameState.frameCount.value }} {{ currentPlayer() }} is up ({{ nextPlayer() }} is next)</div>
-        <br>
-        <div class="row">{{ currentPlayer() }} scored 
-            <input type="text" v-model="currentScore" @keyup.enter="saveScore">
-            <button @click="saveScore">Score!</button>
+    <div class="flex-container">
+        <div class="hero" v-if="gameState.ready() == false && gameState.active.value == false && !gameState.gameOver.value">
+            <h1>Add players to start</h1>
         </div>
+        <div class="hero" v-if="gameState.ready() == true && gameState.active.value == false && !gameState.gameOver.value">
+            <h1>Ready to start! Or add more players</h1>
+        </div>
+        <div class="hero" v-if="gameState.gameOver.value == true">
+            <h1>Game over!</h1>
+        </div>
+        <div class="hero" v-if="gameState.active.value == true">
+            <h1 class="info">{{ currentPlayer() }} is up </h1>
+            <div>({{ nextPlayer() }} is next)</div>
+            <div class="row">
+                <div class="expand"><b>{{ currentPlayer() }}</b> scored </div>
+                <input type="number" pattern="\d*" v-model="currentScore" @keyup.enter="saveScore">
+                <button @click="saveScore">Score!</button>
+            </div>
+        </div>
+        
+        <Team name="Team 1" :num=0></Team>
+        
+        <Team name="Team 2" :num=1></Team>  
     </div>
-    <br>
-    <Team name="Team 1" :num=0></Team>
-    <br>
-    <Team name="Team 2" :num=1></Team>  
 </template>
 
 <script setup>
@@ -45,10 +51,32 @@
 button {
     display: inline;
     padding: 8px;
+    flex-grow: 1;
 }
 input {
     width: 40px;
     padding: 5px;
     margin-left: 10px;
+    flex-grow: 1;
+}
+.expand {
+    display:flex;
+    flex-grow: 0;
+}
+.hero {
+    display: flex;
+    align-self: start;
+    flex-direction:column;
+}
+.info {
+    padding:0;
+    margin:0;
+}
+.row {
+    padding-top: 20px;
+}
+b {
+    display: inline;
+    margin-right: 0.3em;
 }
 </style>
