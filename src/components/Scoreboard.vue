@@ -1,6 +1,6 @@
 <template>
     <div v-if="gameState.active.value == false">
-        <h1>Skee-ball score</h1>
+        <h1>Skee-ball score keeper</h1>
     </div>
     <div v-if="gameState.gameOver.value == true">
         <h1>Game over!</h1>

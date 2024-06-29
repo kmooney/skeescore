@@ -9,7 +9,7 @@ export const gameState = {
     frameCount: ref(0),
     ready: () => { 
         return gameState.teams.value[0].length > 0 &&
-               gameState.teams.value[1].length > 0 &&
+               gameState.teams.value[0].length == gameState.teams.value[1].length &&
                gameState.active.value == false
     },
     nextTeam: () => {
