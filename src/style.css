@@ -45,13 +45,16 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+ 
+  background-color: rgb(120, 255, 100);
+  color: black;
+  margin:0;
+  border-radius: 4px;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+button:disabled {
+  background-color: #ccc;
+  color: #666;
 }
 
 .card {
@@ -65,15 +68,28 @@ button:focus-visible {
   text-align: center;
 }
 
+@media (max-width: 480px) {
+  :root {
+    overflow: hidden;
+    touch-action: none;
+    user-scalable: none;
+  }
+}
+
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #8aa4ff;
+    background-color: black;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+
+body { 
+  -webkit-touch-callout: none !important; 
+  touch-callout: none !important;
+}
+
+body, a { 
+  -webkit-user-select: none !important;
+  user-select: none !important;
 }
