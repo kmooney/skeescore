@@ -3,16 +3,7 @@
         <table width="90%">
             <tr class="frame-count lite">
                 <td></td>
-                <td width="30px">1</td>
-                <td width="30px">2</td>
-                <td width="30px">3</td>
-                <td width="30px">4</td>
-                <td width="30px">5</td>
-                <td width="30px">6</td>
-                <td width="30px">7</td>
-                <td width="30px">8</td>
-                <td width="30px">9</td>
-                <td width="30px">10</td>
+                <td width="30px" v-for="frame in 10" :key="frame">{{ frame }}</td>
                 <td><em>total</em></td>
             </tr>
             <Row v-for="(player, index) in gameState.teams.value[props.num]" 
@@ -86,7 +77,7 @@ div.team {
     padding:12px;
 
     border-radius: 5px;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.8);
 }
 .lite {
     opacity: 0.5;
