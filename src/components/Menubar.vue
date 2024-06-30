@@ -1,5 +1,5 @@
 <template>
-    <canvas id="menubar-canvas"></canvas>
+    <canvas id="menubar-canvas" width="800" height="80"></canvas>
     <div class="menubar">
         <ul>
             <li v-if="!gameState.active.value">
@@ -25,11 +25,44 @@
         gameState.active.value = true
         window.scrollTo(0,0)
     }
+
+    let drawCanvas = () => {
+        canvas ||= document.getElementById('menubar-canvas')
+        ctx ||= canvas.getContext('2d')
+        
+        if (count == 3000) {
+            ctx.clearRect(0,0,canvas.width,canvas.height)
+            count = 0
+        }
+        c += 0.15
+        ctx.globalCompositeOperation = 'xor'
+        let co = parseInt(c)
+        ctx.strokeStyle = 'oklch(0.325 0.2 '+ co +')'
+        ctx.fillStyle = 'oklch(0.75 0.2 '+ co +')'
+        for (let i = 0; i < 1; i++) {
+        let path = new Path2D()
+        path.rect(
+            Math.random()*canvas.width,
+            Math.random()*canvas.height, 
+            Math.random()*40, Math.random()*40
+        )
+        ctx.fill(path)
+        ctx.stroke(path)
+        }
+        count += 1
+        requestAnimationFrame(drawCanvas)
+    }
+    let c = 0;
+    let count = 0;
+    let canvas = null;
+    let ctx = null;
+    let r = document.querySelector(':root')
+    requestAnimationFrame(drawCanvas)
+
 </script>
 
 <style scoped>
     .menubar {
-        background-color: #fefefe;
         color: #333;
         display: block;
         position:fixed;
