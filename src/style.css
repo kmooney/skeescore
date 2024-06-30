@@ -45,7 +45,7 @@ button {
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  background-color: oklch(0.48 0.2 calc(var(--color-family) + 45));
+  background-color: oklch(0.48 0.35 calc(var(--color-family) + 30));
   color: rgb(255, 255, 255);
   margin:0;
   border-radius: 4px;
