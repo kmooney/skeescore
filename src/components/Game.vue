@@ -20,7 +20,7 @@
                 radius: Math.random() * 20 + 10,
                 y: canvas.height + 30,
                 color: 'oklch(0.5 0.2 '+ co +')',
-                speed: Math.random() * 0.02
+                speed: Math.random() * 0.01
             })
         }
 
@@ -29,12 +29,11 @@
 
         bubbles.forEach((bubble, index) => {
             bubble.y -= bubble.speed
-            bubble.speed += Math.random() * 0.02
+            bubble.speed += Math.random() * 0.01
             ctx.beginPath()
             ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2)
             ctx.fillStyle = bubble.color
             ctx.fill()
-
 
             if ((bubble.y + 100) < -bubble.radius) {
                 bubbles.splice(index, 1)
@@ -68,7 +67,6 @@
     #game-bg-canvas {
         display:flex;
         position:absolute;
-        border: 1px solid red;
         width: calc(100% - 2px);
         top:0;
         left:0;
