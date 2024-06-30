@@ -1,4 +1,5 @@
 <template>
+    <canvas id="menubar-canvas"></canvas>
     <div class="menubar">
         <ul>
             <li v-if="!gameState.active.value">
@@ -38,12 +39,25 @@
         top:0;
         left:0;
         width:100%;
+        height: 40px;
     }
 
     ul {
         list-style-type: none;
         padding: 0;
         margin: 0;
+        width: calc(100% - 20px);
+        top: 10px;
+        left: 10px;
+        position: absolute;
+    }
+
+    #menubar-canvas {
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        top:0;
+        left:0;
     }
 
     button {
@@ -55,5 +69,15 @@
         color:white;
         float:right;
         margin-right:20px;
+    }
+    .menubar-canvas {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border:2px solid lightblue;
+
+        width: 100%;
+        height: 100%;
     }
 </style>
