@@ -1,8 +1,8 @@
 <template>
     <tr>
         <td class="name" align="left">{{ props.name }}</td>
-        <td v-for="score in props.scores">{{ score }}</td>
-        <td v-for="index in 10 - props.scores.length"> - </td>
+        <td v-for="(score, index) in props.scores" :key="index">{{ score }}</td>
+        <td v-for="index in 10 - props.scores.length" :key="index"> - </td>
         <td><em v-if="props.scores.length > 0">{{  props.scores.reduce( (x,m) => parseInt(x) + parseInt(m) ) }}</em></td>
     </tr>
 </template>
