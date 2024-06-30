@@ -10,4 +10,3 @@ app.mount('#app')
 import { colorCycle } from './colorCycle.js'
 
 requestAnimationFrame(colorCycle);
-
