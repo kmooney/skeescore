@@ -16,10 +16,6 @@
 </script>
 
 <style scoped>
-.row {
-    /* Your styles here */
-}
-
 .name {
     max-width: 80px;
     overflow: hidden;
